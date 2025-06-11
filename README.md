@@ -1,58 +1,65 @@
-<<<<<<< HEAD
-# sick-leave-compensation-calculator
-=======
-# React + TypeScript + Vite
+# Sick-Leave Compensation Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React + TypeScript application for calculating health insurance compensation during sick leave, based on Estonian compensation rules.
 
-Currently, two official plugins are available:
+## Task Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app allows users to:
+- Enter gross monthly income
+- Specify sick-leave days
+- Indicate whether they have tuberculosis
+- See the amount of compensation from the employer and the Estonian Health Insurance Fund
+- Get a total net compensation amount based on entered data
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📱 Responsive Design
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Fully responsive, pixel-perfect based on Figma Design
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Time Taken
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
->>>>>>> feature/sick-leave-calculator
+Estimated time: **10 hours**
+
+---
+
+##  Tech Stack
+
+- **React 18** (with Hooks)
+- **TypeScript**
+- **SCSS** for styling
+- **Vite** as the build tool
+- **CSS Flexbox/Grid** for layout
+- **Semantic HTML**
+
+---
+
+## 🧪 Validation Rules
+
+The app performs validation on user input before calculation:
+
+### Income (Gross)
+- Required field
+- Must be a number
+- Must be a positive number
+
+### Sick-Leave Days
+- Required field
+- Must be a number
+- Must be a positive number
+
+### Insurance Event
+- Maximum:
+  - 182 days normally
+  - 240 days if tuberculosis is checked
+
+Errors are shown inline near inputs for better UX.
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run the app
+npm run dev
