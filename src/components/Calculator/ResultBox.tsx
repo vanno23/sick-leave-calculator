@@ -4,10 +4,9 @@ import styles from "./Calculator.module.scss";
 
 type ResultBoxProps = {
   result: CompensationResult;
-  days: number;
 };
 
-const ResultBox: React.FC<ResultBoxProps> = ({ result, days }) => {
+const ResultBox: React.FC<ResultBoxProps> = ({ result }) => {
   const formatNumber = (value: number) =>
     new Intl.NumberFormat("de-DE", {
       style: "decimal",
@@ -66,7 +65,8 @@ const ResultBox: React.FC<ResultBoxProps> = ({ result, days }) => {
           className={`${styles.resultBox__item} ${styles["resultBox__item--total"]}`}
         >
           <dt className={styles.resultBox__term}>
-            Compensation total for {days} days (net)
+            Compensation total for {result.employerDays + result.insuranceDays}{" "}
+            days (net)
           </dt>
           <dd className={styles.resultBox__description}>
             {formatNumber(result.total)}€

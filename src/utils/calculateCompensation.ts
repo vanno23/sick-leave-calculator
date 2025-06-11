@@ -21,18 +21,6 @@ export function calculateCompensation(
 
   const errors: { income?: string; days?: string } = {};
 
-  if (isNaN(grossIncome) || grossIncome <= 0) {
-    errors.income = "Gross income must be a positive number.";
-  }
-
-  if (
-    isNaN(sickLeaveDays) ||
-    sickLeaveDays <= 0 ||
-    !Number.isInteger(sickLeaveDays)
-  ) {
-    errors.days = "Sick leave days must be a positive whole number.";
-  }
-
   if (Object.keys(errors).length > 0) {
     return {
       employerDays: 0,

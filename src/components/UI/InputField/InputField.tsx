@@ -31,6 +31,7 @@ const InputField: React.FC<InputFieldProps> = ({
           id={name}
           name={name}
           type={type}
+          step="any"
           value={value}
           onChange={onChange}
           className={styles.inputField__input}

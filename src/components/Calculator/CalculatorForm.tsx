@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import InputField from "../UI/InputField/InputField";
 import { calculateCompensation } from "../../utils/calculateCompensation";
 import styles from "./Calculator.module.scss";
+import { useFormValidation } from "../../hooks/useFormValidation";
 
 interface CalculatorFormProps {
   setResult: (result: ReturnType<typeof calculateCompensation>) => void;
-  setSubmittedDays: (days: number) => void;
 }
 
-const CalculatorForm: React.FC<CalculatorFormProps> = ({
-  setResult,
-  setSubmittedDays,
-}) => {
+const CalculatorForm: React.FC<CalculatorFormProps> = ({ setResult }) => {
   const [income, setIncome] = useState("");
   const [days, setDays] = useState("");
   const [hasTuberculosis, setHasTuberculosis] = useState(false);
+  const { validateForm, clearErrors } = useFormValidation();
 
   const [errorMessages, setErrorMessages] = useState<{
     income?: string;
@@ -23,6 +21,13 @@ const CalculatorForm: React.FC<CalculatorFormProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validationErrors = validateForm(income, days);
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrorMessages(validationErrors);
+      return;
+    }
 
     const incomeNum = parseFloat(income);
     const daysNum = parseInt(days, 10);
@@ -33,14 +38,9 @@ const CalculatorForm: React.FC<CalculatorFormProps> = ({
       hasTuberculosis,
     });
 
-    if (calc.errors) {
-      setErrorMessages(calc.errors);
-      return;
-    }
-
+    clearErrors();
     setErrorMessages({});
     setResult(calc);
-    setSubmittedDays(daysNum);
   };
 
   return (
