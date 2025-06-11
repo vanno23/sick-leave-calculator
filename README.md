@@ -12,7 +12,7 @@ The app allows users to:
 - Get a total net compensation amount based on entered data
 
 
-## 📱 Responsive Design
+## Responsive Design
 
 Fully responsive, pixel-perfect based on Figma Design
 
@@ -34,7 +34,7 @@ Estimated time: **10 hours**
 
 ---
 
-## 🧪 Validation Rules
+## Validation Rules
 
 The app performs validation on user input before calculation:
 
