@@ -1,0 +1,22 @@
+@use "../styles/variables" as *;
+
+.calculatorLayout {
+  display: grid;
+  grid-template-columns: 33fr 16fr;
+  gap: $spacing-xl;
+  align-items: start;
+  padding: $spacing-xl;
+  background-color: $color-bg-dark;
+  min-height: 100vh;
+
+  @media (max-width: 1024px) {
+    padding: $spacing-lg;
+    gap: $spacing-lg;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: $spacing-md;
+    gap: $spacing-md;
+  }
+}

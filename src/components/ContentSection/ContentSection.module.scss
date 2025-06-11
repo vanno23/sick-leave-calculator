@@ -1,0 +1,105 @@
+@use "../styles/variables" as *;
+
+.contentSectionContainer {
+  color: $color-white;
+}
+
+.contentHeader {
+  margin-bottom: $spacing-lg;
+
+  .headerTitle {
+    font-weight: 700;
+    font-size: $font-xxl;
+    line-height: $line-lg;
+    margin-bottom: $spacing-md;
+  }
+
+  .headerParagraph {
+    font-weight: 400;
+    font-size: $font-md;
+    line-height: $line-md;
+
+    .highlightText {
+      color: $color-primary;
+    }
+  }
+}
+
+.articleSection {
+  display: grid;
+  grid-template-columns: 19fr 12fr;
+  column-gap: $spacing-lg;
+  justify-content: space-between;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    column-gap: $spacing-sm;
+  }
+
+  .articleContentWrapper {
+    .articleTitle {
+      font-weight: 700;
+      font-size: $font-xl;
+      line-height: 2.1875rem;
+      margin-bottom: $spacing-md;
+    }
+
+    .articleParagraph {
+      font-weight: 400;
+      font-size: $font-md;
+      line-height: $line-md;
+    }
+  }
+
+  .articleImage {
+    width: 100%;
+    border-radius: $radius-sm;
+  }
+}
+
+.listSection {
+  margin-top: $spacing-md;
+}
+
+.listItem {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+  font-size: $font-md;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 1rem;
+    height: 0.25rem;
+    background: linear-gradient(
+      90deg,
+      $color-primary-dark 0%,
+      $color-primary 100%
+    );
+  }
+}
+
+.nestedBulletList {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+
+  .nestedListItem {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0.75rem 0;
+    font-size: $font-md;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5em;
+      width: 0.75rem;
+      height: 0.25rem;
+      background: $color-border-gradient;
+    }
+  }
+}

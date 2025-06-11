@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Sora", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+html {
+  font-size: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: 70%;
+  }
+}

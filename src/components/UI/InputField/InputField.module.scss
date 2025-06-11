@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+.errorText {
+  color: $color-error;
+  font-size: $font-xs;
+}
+
+.inputField__label {
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-weight: 400;
+  font-size: $font-sm;
+  color: $color-grey-dark;
+}
+
+.inputField__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  border-radius: $radius-sm;
+  background-image: linear-gradient($color-white, $color-white),
+    $color-border-gradient;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm;
+
+  .inputField__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: $font-md;
+    font-weight: 400;
+    color: $color-text-dark;
+    background: transparent;
+  }
+
+  .inputField__unit {
+    font-weight: 700;
+    font-size: $font-md;
+    text-align: right;
+    color: $color-text-dark;
+  }
+}
